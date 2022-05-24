@@ -4,8 +4,8 @@
     font-style: normal;
     font-weight: 400;
     src: local(''),
-        url('./assets/fontslato-v23-latin-regular.woff2') format('woff2'),
-        url('./assets/fontslato-v23-latin-regular.woff') format('woff'); 
+        url('../fontslato-v23-latin-regular.woff2') format('woff2'),
+        url('../fontslato-v23-latin-regular.woff') format('woff'); 
     }
 /* lato-700 - latin */
 @font-face {
@@ -13,8 +13,8 @@
     font-style: normal;
     font-weight: 700;
     src: local(''),
-        url('./assets/fontslato-v23-latin-700.woff2') format('woff2'), 
-        url('./assets/fontslato-v23-latin-700.woff') format('woff'); 
+        url('../fontslato-v23-latin-700.woff2') format('woff2'), 
+        url('../fontslato-v23-latin-700.woff') format('woff'); 
     }
 /* lato-900 - latin */
 @font-face {
@@ -22,8 +22,12 @@
     font-style: normal;
     font-weight: 900;
     src: local(''),
-        url('./assets/fontslato-v23-latin-900.woff2') format('woff2'), 
-        url('./assets/fontslato-v23-latin-900.woff') format('woff'); 
+        url('../fontslato-v23-latin-900.woff2') format('woff2'), 
+        url('../fontslato-v23-latin-900.woff') format('woff'); 
+}
+
+:root{
+    --main-color: white;
 }
 html{
     box-sizing: border-box;
@@ -46,10 +50,12 @@ body{
 .wrapper{
     max-width: 1060px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .wrapper-full{
     max-width: 1262px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .section-title{
     font-weight: 500;
@@ -102,16 +108,98 @@ body{
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    color: white;
+    color: var(--main-color);
     text-decoration: none;
 }
 .header__link:hover, .header__link:focus, .header__link:active{
     opacity: .75;
 }
+
+/* ................................Header-Burger........................*/
+.header__burger{
+    position: relative;
+    width: 40px;
+    height: 28px;
+    display: none;
+}
+.burger__line{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+}
+.burger__line_first{
+    top: 0;
+}
+.burger__line_third{
+    bottom: 0;
+}
+.burger__line_second{
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* @Media */
+@media screen and (max-width: 767px){
+    .header__burger{
+        display: block;
+    }
+    .header__nav{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #0E1D28;
+        z-index: 100;
+        padding: 75px;
+        transform: translateX(100%);
+        transition: 0.2s all linear;
+    }
+    .header__nav_active{
+        transform: translateX(0);
+    }
+    .header__item{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .header__item:last-child{
+        margin-bottom: 0;
+    }
+    .header__link{
+        font-size: 42px;
+        line-height: 48px;
+    }
+    .header__nav-close{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+    .header__nav-close-line{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+    }
+    .header__nav-close-line:first-child{
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .header__nav-close-line:last-child{
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}
+
 /* ................................Main................................ */
 .intro{
     min-height: 100vh;
-    background: url(/assets/img/intro/intro-bg.jpg) no-repeat center;
+    background: url(../img/intro/intro-bg.jpg) no-repeat center;
     background-size: cover;
     padding-top: 262px;
 }
@@ -119,7 +207,7 @@ body{
     font-weight: 500;
     font-size: 50px;
     line-height: 60px;
-    color: #FFFFFF;
+    color: var(--main-color);
     max-width: 619px;
     margin-bottom: 22px;
 }
@@ -127,7 +215,7 @@ body{
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: var(--main-color);
     max-width: 546px;
     margin-bottom: 59px;
 }
@@ -139,21 +227,21 @@ body{
 .search-form__field{
     width: 297px;
     background-color: transparent;
-    background: url(/assets/img/svg/circle-icon.svg) no-repeat left top;
+    background: url(../img/svg/circle-icon.svg) no-repeat left top;
     block-size: 20px;
     border: none;
     border-bottom: 2px solid #BFC0C5;
     margin-right: 60px;
     padding-left: 43px;
     padding-bottom: 22px;
-    color: white;
+    color: var(--main-color);
     padding-top: 12px;
 }
 .search-form__field::placeholder{
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: var(--main-color);
 }
 .search-form__submit{
     display: block;
@@ -164,7 +252,7 @@ body{
     line-height: 29px;
     background-color: #1B7DFF;
     border: none;
-    color: white;
+    color: var(--main-color);
     margin-bottom: 15px;
 }
 .search-form__submit:hover, .search-form__submit:focus, .search-form__submitactive{
@@ -179,7 +267,7 @@ body{
     max-width: 1262px;
     height: auto;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--main-color);
     box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
 }
 .benefits__cards{
@@ -198,7 +286,7 @@ body{
     font-size: 35px;
     line-height: 42px;
     padding: 93px 100px 88px 100px;
-    background-color: #fff;    
+    background-color: var(--main-color);    
 }
 .benefits__card{
     grid-column: span 1;
@@ -232,11 +320,11 @@ body{
     color: #006DFE;
     text-transform: uppercase;
     text-decoration: none;
-    background: url(/assets/img/svg/arrow-right-icon.svg) no-repeat 95% center;
+    background: url(../img/svg/arrow-right-icon.svg) no-repeat 95% center;
     transition: 0.2s;
 }
 .benefits__card-more:hover, .benefits__card-more:focus{
-    background: url(/assets/img/svg/arrow-right-icon.svg) no-repeat right center;
+    background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
 }
 /* ...................................Places................................*/
 .places{
@@ -259,7 +347,7 @@ body{
     color: #006DFE;
     text-transform: uppercase;
     text-decoration: none;
-    background: url(/assets/img/svg/arrow-right-icon.svg) no-repeat right center;
+    background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
     transition: 0.2s;
     padding-right: 59px;
 }
@@ -315,7 +403,7 @@ body{
     font-weight: 700;
     font-size: 50px;
     line-height: 60px;
-    color: #FFFFFF;
+    color: var(--main-color);
     bottom: 27px;
     left: 29px;
 }
@@ -359,7 +447,7 @@ body{
     text-decoration: none;
     text-transform: uppercase;
     text-decoration: none;
-    background: url(/assets/img/svg/arrow-right-icon.svg) no-repeat right center;
+    background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
     transition: 0.2s;
     padding-right: 59px;
 }
@@ -406,24 +494,24 @@ body{
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: var(--main-color);
 }
 .top__card-likes-value{
-    color: #FFFFFF;
+    color: var(--main-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     padding-right: 20px;
-    background: url(/assets/img/svg/heart-icon.svg) no-repeat right;
+    background: url(../img/svg/heart-icon.svg) no-repeat right;
     margin-right: 14px;
 }
 .top__card-comments-value{
-    color: #FFFFFF;
+    color: var(--main-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     padding-right: 23px;
-    background: url(/assets/img/svg/comment-icon.svg) no-repeat right;
+    background: url(../img/svg/comment-icon.svg) no-repeat right;
 }
 .top__card-desc{
     font-weight: 400;
@@ -440,7 +528,7 @@ body{
     line-height: 19px;
     background-color: #1B7DFF;
     border: none;
-    color: white;
+    color: var(--main-color);
     margin-bottom: 15px;
     text-decoration: none;
     margin: auto 0 0 0;
@@ -489,13 +577,13 @@ body{
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: var(--main-color);
 }
 .footer__menu-link{
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: var(--main-color);
     text-decoration: none;
 }
 .footer__menu-link:hover, .footer__menu-link:focus, .footer__menu-link:active{
