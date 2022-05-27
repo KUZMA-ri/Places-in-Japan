@@ -403,7 +403,7 @@ body{
     display: grid;
     -ms-grid-columns: 1fr 55px 1fr 55px 1fr;
     grid-template-columns: repeat(3,1fr);
-    grid-column-gap: 55px;
+    column-gap: 55px;
     padding: 0 100px;
     top: 120px;
     margin-bottom: 112px;
@@ -411,7 +411,7 @@ body{
 @media screen and (max-width: 960px) {
     .benefits__cards{
         padding: 0 15px;
-        grid-column-gap: 35px;
+        column-gap: 35px;
     }
 }
 .benefits__title{
@@ -555,8 +555,8 @@ body{
     display: grid;
     -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
     grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 .places__card_size_lg{
     -ms-grid-column-span: 3;
@@ -667,7 +667,7 @@ body{
     display: grid;
     -ms-grid-columns: 1fr 108px 1fr;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 108px;
+    column-gap: 108px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -675,7 +675,7 @@ body{
 }
 @media screen and (max-width: 960px){
     .tours__tour{
-        grid-column-gap: 35px ;
+        column-gap: 35px ;
     }
 }
 @media screen and (max-width: 767px){
@@ -795,13 +795,13 @@ body{
     display: grid;
     -ms-grid-columns: 1fr 57px 1fr 57px 1fr 57px 1fr 57px 1fr 57px 1fr;
     grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 57px;
-    grid-row-gap: 57px;
+    column-gap: 57px;
+    row-gap: 57px;
 }
 @media screen and (max-width: 960px){
     .top__cards{
-        grid-column-gap: 25px;
-        grid-row-gap: 25px;
+        column-gap: 25px;
+        row-gap: 25px;
     }
 }
 .top__card-thumb{
