@@ -580,11 +580,11 @@ body{
 }
 .places__card-pic{
     width: 100%;
-    -webkit-transition: 0.15s;
-    -o-transition: 0.15s;
-    transition: 0.15s;
+    -webkit-transition: 0.55s;
+    -o-transition: 0.55s;
+    transition: 0.55s;
     -o-object-fit: cover;
-       object-fit: cover;
+        object-fit: cover;
 }
 .places__card-pic_size_lg{
     height: 354px;
